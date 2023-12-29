@@ -1,0 +1,22 @@
+.weather-title {
+  color: #00ced1;
+  font-family: "Bangers", cursive;
+}
+
+.jumbotron {
+  background-color: #2f4f4f;
+}
+
+main {
+  font-family: "Baloo Bhai 2", cursive;
+}
+
+#city-search {
+  margin: 15px;
+}
+
+@media screen and (max-width: 750px) {
+  #current-city {
+    margin-left: 15px;
+  }
+}
