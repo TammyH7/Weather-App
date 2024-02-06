@@ -2,59 +2,125 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">      
-    <link rel="stylesheet" href="./styles.css">
     <title>Weather App</title>
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- linked stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
-        <!--Header/navBar-->
-        <nav class="navGradient">
+        <nav class="navbar-light bg-light weather-header">
             <h1>Weather Dashboard</h1>
         </nav>
+        
     </header>
-    <!--Container for main-->
-    <main class=" container container-fluid myContainer">
-        <div class="row">
-            <div class="col-lg-3 searchCity">
-                <!--searchCityDiv start-->
-                <div class="searchCityDiv">
-                    <label for="searchCity">Search for a City:</label>
-                    <input type="text" name="searchCity" id="searchCity">
-                    <br>
-                    <button class="btn searchBtn" type="submit">Search</button>
-                </div>
-                <hr>
-                <!--searchCityDiv end ^^-->
-                <!--searchED Cities Div start-->
-                    <div class="searchedCities">
-                        <ul class="searchedCitiesList">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center">
+            <div class="col">
+                <div class="card fit-height">
+                    <div class="card-body">
+                        <form id="locationForm"> 
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" class="form-control" id="locationInput" >
+                            </div>
+                            <button type="submit" class="btn btn-info">Submit</button>
+                            <button type="button" id="clear-history" class="btn btn-danger">Clear Search History</button>                        
+                        </form>
+                    <!-- Previous searches stored here -->
+                        <ul class="list-group">
+                        
                         </ul>
-                    </div>
-                <!--searchED Cities Div end ^^-->
-            </div>
-            <!--Weather info-->
-            <div class="weatherInfo col-lg-9 ">
-                <!--current weather-->
-                <div class="row currentWeather">
-                    <h2 class="cityNameDate"></h2>
-                    <p class="temp">Temp:</p>
-                    <p class="wind">Wind: </p>
-                    <p class="humidity">Humidity</p>
-                    <p class="uvIndex">UV index</p>
                 </div>
-                <!--5 day forecast-->
-                <div class="row forecast">
-                    <h3 class="forecastHeading">5-Day Forecast:</h3>
+            </div>
+             
+            </div>
+            <div class="col">
+                <div class="card">
+                    <!-- Current date results shown here -->
+                    <div class='card-body fit-width'>
+                        <h2 class="current-location">Location:</h2>
+                        <img id="weatherDisplay"/>
+                        <p class="current-temp">Temp:</p>
+                        <p class="current-humidity">Humidity:</p>
+                        <p class="wind-speed">Wind Speed:</p>
+                        <p><span class="current-uv-index">UV Index:</span></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+        <div class="row d-flex justify-content-center">
+            <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title forecast1-date">Date:</h5>
+                        <img class="forecast1-img"/>
+                        <p class="card-text forecast1-temp">Temp:</p>
+                        <p class="card-text forecast1-humidity">Temp:</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <div  class="card-body">
+                        <h5 class="card-title forecast2-date">Date:</h5>
+                        <img class="forecast2-img"/>
+                        <p class="card-text forecast2-temp">Temp:</p>
+                        <p class="card-text forecast2-humidity">Humidity:</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <div  class="card-body">
+                        <h5 class="card-title forecast3-date">Date:</h5>
+                        <img class="forecast3-img"/>
+                        <p class="card-text forecast3-temp">Temp:</p>
+                        <p class="card-text forecast3-humidity">Humidity:</p>
+                    </div>
+                </div>   
+                <div class="card" style="width: 18rem;">
+                    <div  class="card-body">
+                        <h5 class="card-title forecast4-date">Date:</h5>
+                        <img class="forecast4-img"/>
+                        <p class="card-text forecast4-temp">Temp:</p>
+                        <p class="card-text forecast4-humidity">Humidity:</p>
+                    </div>
+                </div>    
+                <div class="card" style="width: 18rem;">
+                    <div  class="card-body">
+                        <h5 class="card-title forecast5-date">Date:</h5>
+                        <img class="forecast5-img"/>
+                        <p class="card-text forecast5-temp">Temp:</p>
+                        <p class="card-text forecast5-humidity">Humidity:</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+    
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    
+
+
+    <!-- bootstrap cdn -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <!-- ajax cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Moment cdn -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+      integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg=="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Main -->
     <script src="./script.js"></script>
 </body>
 </html>

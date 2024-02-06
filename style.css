@@ -1,0 +1,84 @@
+body {
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1428353077903-d09b3e000f37?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+}
+
+header{
+    box-shadow: 0px 0px 8px 0px #4e0435;
+    font-family: 'Jura', sans-serif;
+   
+}
+
+.weather-header {
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(
+        to right,
+        rgb(60, 42, 113),
+        rgb(228, 87, 233)
+      );
+      font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  padding: 2rem;
+}
+
+ul {
+    margin-top: 10px;
+}
+.container-fluid {
+    margin-top: 50px;
+    
+}
+
+.fit-width {
+    width: fit-content;
+}
+
+.fit-height{
+    height: fit-content;
+}
+
+.card {
+    margin: 10px;
+    font-weight: 600;
+    font-size: 25px;
+    box-shadow: 0px 4px 8px 2px #62075e;
+    border-radius: 8px;
+    background-color: #e6dee6a3;
+}
+
+/* Very High UV */
+.very-high-uv {
+    background-color: #cd1313;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 25px;
+}
+/* High UV */
+.high-uv {
+    background-color: #e75d0d;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 25px;
+}
+/* Moderate UV */
+.mod-uv {
+    background-color: #d7c71a;
+    /* color: white; */
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 25px;
+}
+/* Low UV */
+.low-uv {
+    background-color: #0b6a2f;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 25px;
+}
+
+
